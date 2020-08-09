@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: helvetica;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 70px;
+  font-family: "Caesar Dressing", cursive;
+}
+
+td {
+  height: 100px;
+  width: 100px;
+}
+
+td div {
+  margin: 0 auto;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+tr td {
+  border: 4px solid rgb(63, 63, 63);
+}
+
+button {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: "Caesar Dressing", cursive;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
