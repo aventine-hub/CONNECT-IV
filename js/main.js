@@ -1,6 +1,6 @@
 /*----- constants -----*/
 const lookup = {
-  null: "white", //<-----could be image URLs
+  null: "transparent", //<-----could be image URLs
   "1": "black",
   "-1": "grey",
 };
@@ -143,16 +143,20 @@ function init() {
 
 function handleMove(event) {
   const index = parseInt(event.target.id.replace("sp", ""));
-  if (board[index]) {
-    return;
+  let top = index % 7; // column number
+  if (board[top] || winner !== null) return;
+  // if top of column has value (is true) or game has winner, return
+  let playerChoice = top;
+  while (board[playerChoice + 7] === null && playerChoice + 7 < 42) {
+    // if the next space below in the column is empty and it is not off the array
+    playerChoice += 7;
+    // go down to the next space in the column
   }
-  board[index] = turn;
+  board[playerChoice] = turn;
   turn *= -1;
   winner = winning();
   render();
 }
-
-// need to add logic so click is only allowed on bottom row or on top of played space
 
 function winning() {
   for (let i = 0; i < winningCombos.length; i++) {
@@ -175,9 +179,12 @@ function render() {
     squaresEl[idx].style.background = lookup[square];
   });
   if (winner === "T") {
-    message.innerHTML = "THE GAME IS TIED, CITIZEN.";
+    message.innerHTML = "THE GAME IS TIED, CITIZENS.";
   } else if (winner) {
-    message.innerHTML = `THE WINNER IS ${lookup[winner].toUpperCase()}!`;
+    message.innerHTML = `${lookup[
+      winner
+    ].toUpperCase()} IS THE WINNER, CITIZENS!`;
+    return;
   } else {
     message.innerHTML = `${lookup[turn].toUpperCase()}'S TURN`;
   }

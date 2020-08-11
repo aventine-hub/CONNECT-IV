@@ -1,9 +1,4 @@
 html,
-body {
-  height: 120vh;
-  margin: 0;
-}
-
 * {
   box-sizing: border-box;
   font-family: helvetica;
@@ -14,31 +9,37 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("https://i.imgur.com/SkHTtcc.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  max-width: 100%;
+  height: auto;
 }
-
 h1 {
   margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 70px;
   font-family: "Caesar Dressing", cursive;
 }
 
 #message {
-  margin-top: 0px;
+  margin-top: 5px;
   margin-bottom: 10px;
   font-size: 40px;
   font-family: "Caesar Dressing", cursive;
 }
 
 td {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
+  box-shadow: 1px 1px 1px black;
 }
 
 td div {
   margin: 0 auto;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -48,7 +49,8 @@ tr td {
 }
 
 button {
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   padding: 15px;
   background-color: black;
   color: white;
@@ -57,7 +59,35 @@ button {
   font-family: "Caesar Dressing", cursive;
 }
 
+audio {
+  visibility: visible;
+}
+
 button:hover {
   background-color: white;
   color: black;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://i.imgur.com/zc04HzB.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-family: "Caesar Dressing", cursive;
+  }
 }
