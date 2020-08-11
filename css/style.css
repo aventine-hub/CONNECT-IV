@@ -18,7 +18,7 @@ body {
 }
 h1 {
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 70px;
   font-family: "Caesar Dressing", cursive;
 }
@@ -38,8 +38,8 @@ td {
 
 td div {
   margin: 0 auto;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -52,7 +52,7 @@ button {
   margin-top: 10px;
   margin-bottom: 30px;
   padding: 15px;
-  background-color: black;
+  background-color: rgb(201, 191, 160);
   color: white;
   border-radius: 5px;
   font-size: 20px;
@@ -64,8 +64,8 @@ audio {
 }
 
 button:hover {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: rgb(201, 191, 160);
 }
 
 @media only screen and (min-width: 1024px) {
@@ -87,7 +87,26 @@ button:hover {
   h1 {
     margin-top: 0px;
     margin-bottom: 10px;
-    font-size: 50px;
+    font-size: 40px;
     font-family: "Caesar Dressing", cursive;
+  }
+  #message {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: "Caesar Dressing", cursive;
+  }
+  td {
+    height: 50px;
+    width: 50px;
+    box-shadow: 1px 1px 1px black;
+  }
+
+  td div {
+    margin: 0 auto;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    pointer-events: none;
   }
 }
