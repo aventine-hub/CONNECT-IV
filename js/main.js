@@ -84,7 +84,6 @@ let board, turn, winner;
 /*----- cached element references -----*/
 const squaresEl = document.querySelectorAll("tr td div");
 const message = document.querySelector("#message");
-const replayEl = document.querySelector("#replay");
 
 /*----- event listeners -----*/
 document.querySelector("#replay").addEventListener("click", init);
@@ -143,14 +142,11 @@ function init() {
 
 function handleMove(event) {
   const index = parseInt(event.target.id.replace("sp", ""));
-  let top = index % 7; // column number
+  let top = index % 7;
   if (board[top] || winner !== null) return;
-  // if top of column has value (is true) or game has winner, return
   let playerChoice = top;
   while (board[playerChoice + 7] === null && playerChoice + 7 < 42) {
-    // if the next space below in the column is empty and it is not off the array
     playerChoice += 7;
-    // go down to the next space in the column
   }
   board[playerChoice] = turn;
   turn *= -1;

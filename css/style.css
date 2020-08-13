@@ -59,10 +59,6 @@ button {
   font-family: "Caesar Dressing", cursive;
 }
 
-audio {
-  visibility: visible;
-}
-
 button:hover {
   background-color: black;
   color: rgb(201, 191, 160);
